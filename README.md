@@ -1,5 +1,5 @@
 The tex source can be compiled by running `make` from the home directory, while `make clean` removes auxiliary files
-from the output directory.
+from the repository's root directory.
 
 The adapted color theme is based on the
 [colour palette](http://www.gla.ac.uk/myglasgow/staff/brandguidelines/components/colourpalette/)
