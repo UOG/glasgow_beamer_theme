@@ -1,0 +1,11 @@
+\beamertemplatebookbibitems
+  \bibitem{aut__int}
+  A.~Author.
+  \newblock {\em Introduction to Giving Presentations}.
+  \newblock Publisher, 1990.
+  
+\beamertemplatearticlebibitems
+  \bibitem{wri__ont}
+  B.~Writer.
+  \newblock On This and That.
+  \newblock {\em Journal of This and That}, 2(1):50--100, 2000.

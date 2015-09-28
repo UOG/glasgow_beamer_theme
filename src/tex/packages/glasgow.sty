@@ -1,0 +1,105 @@
+\usetheme{Rochester}
+
+\RequirePackage{ifthen}
+\RequirePackage{pgf}
+\RequirePackage{graphicx}
+
+\setbeamercovered{transparent}
+
+\beamer@headheight=0.2\paperwidth
+
+\definecolor{uogstonetwenty}{HTML}{E5E2E0}
+\definecolor{uogstonefourty}{HTML}{CBC7C2}
+\definecolor{uogstonesixty}{HTML}{B2ABA3}
+\definecolor{uogstoneeighty}{HTML}{988F85}
+\definecolor{uogstone}{HTML}{7F7467}
+% See http://www.gla.ac.uk/myglasgow/staff/brandguidelines/components/colourpalette/
+\definecolor{uogblue}{HTML}{003865}
+\definecolor{uogaquamarine}{HTML}{9AB9AD}
+\definecolor{uogslate}{HTML}{4F5961}
+\definecolor{uogcobalt}{HTML}{009DEC}
+\definecolor{uogsunshine}{HTML}{FFDC36}
+\definecolor{uogpumpkin}{HTML}{FFB948}
+\definecolor{uogthistle}{HTML}{951272}
+\definecolor{uoglavender}{HTML}{5B4D94}
+\definecolor{uogforest}{HTML}{005133}
+
+\definecolor{fimsgray}{HTML}{7F7467}
+\definecolor{fimslightgray}{HTML}{CBC7C2}
+\definecolor{fimsblue}{HTML}{0D3158}
+
+\setbeamercolor*{nix}{}
+\setbeamercolor*{uogbox}{fg=white,bg=uogblue}
+\setbeamercolor*{Title bar}{fg=uogaquamarine}
+\setbeamercolor*{frametitle}{parent=Title bar}
+\setbeamercolor*{block title}{bg=uogforest!75,fg=uogaquamarine!25}
+\setbeamercolor*{block body}{bg=uogaquamarine!25,fg=uogforest!75}
+\setbeamercolor*{normal text}{bg=white,fg=uogslate}
+\setbeamercolor*{section in head/foot}{fg=uogforest}
+\setbeamercolor*{author}{fg=black}
+\usecolortheme[named=uogstone]{structure}
+
+\setbeamerfont{section in head/foot}{size=\tiny,family=\sffamily}
+\setbeamerfont{frametitle}{size=\large,family=\sffamily}
+\setbeamerfont{block title}{family=\sffamily}
+\setbeamerfont{title}{family=\sffamily}
+\setbeamerfont{subtitle}{family=\sffamily}
+
+\setbeamertemplate{title page}{
+ {\usebeamerfont{title}\textcolor{uogthistle}\inserttitle\par}
+ \vspace*{0.125cm}
+ {\usebeamerfont{subtitle}\textcolor{uogblue}{\insertsubtitle}\par}
+ \vspace*{0.75cm}
+ {\usebeamerfont{date}\textcolor{uogblue}{\insertdate}\par}
+ \vspace*{0.125cm}
+ {\usebeamerfont{author}\textcolor{uogblue}{\insertauthor}\par}
+}
+
+\setbeamertemplate{frametitle}
+{
+  \vskip-0.25\beamer@headheight
+  \vskip-\baselineskip
+  \vskip-0.675cm
+  \usebeamerfont*{frametitle}\hfill \insertframetitle\hspace*{-0.5cm}
+  \vskip0.175cm
+}
+
+\setbeamertemplate{headline}
+{
+\begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{uogbox}%
+  \hspace{0.3cm}
+      \includegraphics[width=0.15\paperwidth]{../figures/glasgow_keyline}\par\vspace{0.3cm}
+    \end{beamercolorbox}%
+  \vskip -1.7cm
+  \linethickness{0pt}
+  \framelatex{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1\beamer@headheight]{nix}
+  \end{beamercolorbox}}
+}
+
+\setbeamertemplate{footline} {
+\begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm]{section in head/foot}
+\usebeamerfont{section in head/foot}%
+    \ifthenelse{\equal{\thepage}{1}}{}{\insertsectionnavigationhorizontal{0pt}{}{}  \hfill \insertframenumber/\inserttotalframenumber\hspace*{0.15cm}}
+\end{beamercolorbox}
+}
+
+%gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\bgnone}{}
+\newcommand{\bgsoft}{}
+\newcommand{\bgtower}{\setbeamertemplate{background}{\includegraphics[height=\paperheight]{uog_tower}}}
+\newcommand{\bgcloistures}{\setbeamertemplate{background}{\includegraphics[height=\paperheight]{../figures/glasgow_cloistures}}}
+\newcommand{\bgfull}{\bgtower}
+\newcommand{\bgfullstrip}{\bgtower}
+
+  \newenvironment<>{notitleblock}[0]{%
+    \begin{actionenv}#1%
+      \def\insertblocktitle{}%
+      \par%
+      \setbeamercolor*{block title}{bg=fimslightgray,fg=white}
+      \usebeamertemplate{block begin}}
+    {\par%
+      \usebeamertemplate{block end}%
+    \end{actionenv}}
